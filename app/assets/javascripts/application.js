@@ -16,6 +16,6 @@
 //= require angular-min.js
 //= require angular-router.js
 
-//= require bundle-app.js
+//= require bundle-app
 
 //= require_tree .
