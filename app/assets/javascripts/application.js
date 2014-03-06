@@ -13,8 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 
-//= require lib/angular-min.js
-//= require lib/angular-router.js
+//= require angular-min.js
+//= require angular-router.js
 
 //= require app
 
