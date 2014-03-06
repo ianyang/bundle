@@ -25,6 +25,11 @@
     margin: 0 auto;
 }
 
+.home-container h1 .strong{
+    font-size: 32px;
+    font-weight: 700;
+}
+
 .get-started-bar {
     max-width: 420px;
     margin: 60px auto 80px auto;
@@ -43,6 +48,15 @@
     background: #55ac98;
     float: left;
     color: #ffffff;
+}
+
+.get-started-bar button:hover {
+    background: #50a18e;
+}
+
+.get-started-bar button.loading {
+    background: #8f989b;
+    cursor: wait;
 }
 
 .get-started-bar input {
