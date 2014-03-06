@@ -25,7 +25,8 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 
 # Image handling
-gem "paperclip", "~> 4.1"
+gem 'paperclip'
+gem 'aws-sdk'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

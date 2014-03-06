@@ -45,6 +45,16 @@ Bundle::Application.configure do
   # Set to :debug to see everything in the log.
   config.log_level = :info
 
+  # Paperclip
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['bundleapp'],
+      :access_key_id => ENV['AKIAJTZOKUJF7SZE2UPA'],
+      :secret_access_key => ENV['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']
+    }
+  }
+
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
 
