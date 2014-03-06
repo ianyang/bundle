@@ -2,7 +2,7 @@
 
 var Bundle = angular.module('bundle', ['ngRoute']);
 
-Bundle.config(function($locationProvider, $httpProvider) {
+Bundle.config(function($locationProvider, $httpProvider, $routeProvider) {
 
     // Enable CORS
     $httpProvider.defaults.useXDomain = true;
@@ -21,13 +21,7 @@ Bundle.config(function($locationProvider, $httpProvider) {
 
     $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 
-});
-
-/******************/
-/***** ROUTER *****/
-/******************/
-
-Bundle.config(function($routeProvider) {
+    // Routes
     $routeProvider
     .when('/', {
         templateUrl: 'templates/home.html',
@@ -44,4 +38,5 @@ Bundle.config(function($routeProvider) {
     .otherwise({
         redirectTo: '/'
     });
+
 });
