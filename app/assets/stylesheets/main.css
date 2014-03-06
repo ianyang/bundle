@@ -149,17 +149,17 @@
 }
 
 .share-bar .uuid-container {
-    width: 65%;
+    width: 90%;
     height: 48px;
     float: left;
-    padding: 0 34px;
+    margin-left: 10%;
     overflow-y: hidden;
     overflow-x: scroll;
     color: #8f989b;
     line-height: 52px;
 }
 
-.share-bar button {
+/*.share-bar button {
     width: 35%;
     height: 48px;
     float: left;
@@ -168,7 +168,7 @@
     background: #55ac98;
     margin: 0;
     padding: 0;
-}
+}*/
 
 @media screen and (min-width: 720px) and (max-width: 1023px) {
     .item-container {

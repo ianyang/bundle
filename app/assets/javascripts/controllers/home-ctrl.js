@@ -16,7 +16,7 @@ Bundle.controller('HomeCtrl', ['$scope', '$http', '$location',
                 $scope.loading = true;
                 $http.post('/api/transactions', {transaction: {email: $scope.email}}).success(function(data){
                     $scope.loading = false;
-                    $location.path('/create/'+data.id);
+                    $location.path('/'+data.id+'/'+data.token);
                 }).error(function(data){
                     $scope.loading = false;
                     console.log("HTTP Error");

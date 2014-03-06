@@ -31,13 +31,6 @@ ActiveRecord::Schema.define(version: 20140306084852) do
 
   add_index "items", ["transaction_id"], name: "index_items_on_transaction_id", using: :btree
 
-  create_table "transaction_tokens", force: true do |t|
-    t.integer  "transaction_id"
-    t.string   "token"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "transactions", force: true do |t|
     t.integer  "price",         default: 0
     t.integer  "discount_rate", default: 0

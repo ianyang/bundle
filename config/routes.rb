@@ -2,8 +2,8 @@ Bundle::Application.routes.draw do
 
   root 'public#index'
 
-  get 'create/:id' => 'public#index'
-  get 'view/:id' => 'public#index'
+  get '/:id/:token' => 'public#index'
+  get '/:id' => 'public#index'
 
   scope :api, defaults: {format: :json} do
     resources :transactions, only: [:show, :create, :update]
