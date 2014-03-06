@@ -1,0 +1,29 @@
+<div class="home-container">
+    <div class="content-container">
+        <img src="/assets/icon-logo@2x.png" class="home-logo">
+        <h1><strong>Bundle</strong>, the simplest way to sell furniture to the next tenants.</h1>
+
+        <div class="get-started-bar">
+            <form name="email_form" ng-submit="proceed()" novalidate autocomplete="off">
+                <input name="Email"  ng-class="{ 'input-error' :  inputError }" type="email" ng-model="email" placeholder="Email address" required />
+                <button type="submit">Get Started</button>
+            </form>
+        </div>
+
+        <div class="tutorial-section">
+            <img src="/assets/icon-arrow-left@2x.png" class="arrow-left end" ng-click="moveLeft()">
+
+            <div class="tutorial-steps one active">
+                Gumbo beet greens corn soko endive gumbo gourd shallot courgette tatsoi.
+            </div>
+            <div class="tutorial-steps two">
+                Gumbo beet greens corn soko endive gumbo gourd shallot courgette tatsoi.
+            </div>
+            <div class="tutorial-steps three">
+                Gumbo beet greens corn soko endive gumbo gourd shallot courgette tatsoi.
+            </div>
+
+            <img src="/assets/icon-arrow-right@2x.png" class="arrow-right" ng-click="moveRight()">
+        </div>
+    </div>
+</div>
