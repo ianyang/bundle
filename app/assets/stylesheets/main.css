@@ -52,7 +52,14 @@
 }
 
 .photo-wrapper.add {
-    border: 4px dashed #e8ebec;
+    border: 4px dashed #bcc3c6;
+    background: url("icon-add-photo@2x.png") no-repeat center center;
+    background-size: 60px;
+    opacity: 0.5;
+}
+
+.photo-wrapper.add:hover {
+    opacity: 1;
 }
 
 .photo-uploader {
@@ -84,6 +91,84 @@
     margin: 0;
 }
 
+.main-footer {
+    width: 100%;
+    height: 96px;
+    background: #55ac98;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    padding: 0 16px;
+}
+
+.price-container {
+    float: left;
+    height: 96px;
+    padding: 28px 32px;
+}
+
+.main-footer .title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+    opacity: 0.8;
+    letter-spacing: 1px;
+}
+
+.main-footer .price {
+    font-size: 26px;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+.price-container.bundle-price {
+    background: #ffffff;
+    border-top: 4px solid #e0e4e6;
+    padding: 24px 32px;
+}
+
+.bundle-price .title {
+    color: #8f989b;
+}
+
+.bundle-price .price {
+    color: #323a3d;
+}
+
+.share-bar {
+    float: right;
+    width: 240px;
+    height: 52px;
+    margin-top: 20px;
+    background: #ffffff;
+    border: 2px solid #ffffff;
+    -webkit-border-radius: 30px;
+       -moz-border-radius: 30px;
+            border-radius: 30px;
+    overflow: hidden;
+}
+
+.share-bar .uuid-container {
+    width: 65%;
+    height: 48px;
+    float: left;
+    padding: 0 34px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    color: #8f989b;
+    line-height: 52px;
+}
+
+.share-bar button {
+    width: 35%;
+    height: 48px;
+    float: left;
+    color: #ffffff;
+    border: none;
+    background: #55ac98;
+    margin: 0;
+    padding: 0;
+}
 
 @media screen and (min-width: 720px) and (max-width: 1023px) {
     .item-container {

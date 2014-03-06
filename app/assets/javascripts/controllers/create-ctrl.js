@@ -3,7 +3,10 @@ Bundle.controller('CreateCtrl', ['$scope', '$http', '$location',
 
         $scope.items = null;
         $scope.appReady = false;
+        $scope.fullPath = $location.$$absUrl;
         $scope.UUID = $location.path().split('/')[2];
+        $scope.totalPrice = 500;
+        $scope.bundlePrice = 1000;
 
         var fetchItems = function() {
             $http.get('/api/transactions/'+$scope.UUID).success(function(data){
