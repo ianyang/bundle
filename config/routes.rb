@@ -1,6 +1,9 @@
 Bundle::Application.routes.draw do
 
   root 'public#index'
+  get 'create/:id' => 'public#index'
+  get 'view/:id' => 'public#index'
+
   resources :transactions
 
   resources :items

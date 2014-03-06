@@ -24,15 +24,15 @@ Bundle.config(function($locationProvider, $httpProvider, $routeProvider) {
     // Routes
     $routeProvider
     .when('/', {
-        templateUrl: 'templates/home.html',
+        templateUrl: '../templates/home.html',
         controller: 'HomeCtrl'
     })
     .when('/view/:id', {
-        templateUrl: 'templates/view.html',
+        templateUrl: '../templates/view.html',
         controller: 'ViewCtrl'
     })
     .when('/create/:id', {
-        templateUrl: 'templates/create.html',
+        templateUrl: '../templates/create.html',
         controller: 'CreateCtrl'
     })
     .otherwise({
