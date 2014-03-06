@@ -1,29 +1,3 @@
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-nav,
-section,
-summary {
-    display: block;
-}
-
-.hidden, [hidden] {
-    display: none;
-}
-
-div {
-    position: relative;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-}
-
 html {
     font-size: 14px;
     -ms-text-size-adjust: 100%;
@@ -32,7 +6,7 @@ html {
        -moz-font-smoothing: antialiased;
             font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
-	  -ms-overflow-style: -ms-autohiding-scrollbar;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
 html, body {
@@ -63,28 +37,45 @@ section {
 	box-sizing: border-box;
 }
 
-.right {
-	float: right !important;
+* {
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
 }
 
-.left {
-	float: left !important;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
 }
 
-.site-wrapper {
-    width: 100%;
-    height: 100%;
+.hidden, [hidden] {
+    display: none;
+}
+
+div {
     position: relative;
-    overflow: hidden;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
-.body-site {
-    position: relative;
+.content-container {
     width: 100%;
-    height: -webkit-calc(100% - 60px);
-    height: -moz-calc(100% - 60px);
-    height: calc(100% - 60px);
-    z-index: 0;
+    padding: 0 10px;
+    margin: 0 auto;
+    max-width: 1024px;
     overflow: hidden;
 }
 
@@ -97,16 +88,11 @@ section {
     user-select: none;
 }
 
-.cant-print {
-	display: none;
-}
-
 a {
 	text-decoration: none;
     color: #444444;
     cursor: pointer;
 }
-
 
 a:focus {
     outline: thin dotted;
@@ -294,12 +280,6 @@ textarea {
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
-
-    -webkit-transition: all 0.3s linear;
-    -moz-transition: all 0.3s linear;
-    -ms-transition: all 0.3s linear;
-    -o-transition: all 0.3s linear;
-    transition: all 0.3s linear;
 
     -webkit-appearance: none;
        -moz-appearance: none;

@@ -4,13 +4,10 @@
     overflow: hidden;
     background: #171d1f url("background.png") no-repeat center center;
     background-size: cover;
-    padding: 0 10px;
 }
 
 .home-container .content-container {
     max-width: 640px;
-    width: 100%;
-    margin: 0 auto;
 }
 
 .home-logo {
