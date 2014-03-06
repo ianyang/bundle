@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140306020836) do
+ActiveRecord::Schema.define(version: 20140306021950) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20140306020836) do
   add_index "items", ["transaction_id"], name: "index_items_on_transaction_id", using: :btree
 
   create_table "transactions", force: true do |t|
-    t.integer  "price"
+    t.integer  "price",         default: 0
     t.integer  "discount_rate", default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
