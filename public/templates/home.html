@@ -4,8 +4,8 @@
         <h1><strong>Bundle</strong>, the simplest way to sell furniture to the next tenants.</h1>
 
         <div class="get-started-bar">
-            <form name="email_form" ng-submit="proceed()" novalidate>
-                <input name="Email"  ng-class="{ 'input-error' :  inputError }" type="email" ng-model="email" placeholder="Email address">
+            <form name="email_form" ng-submit="proceed()" novalidate autocomplete="off">
+                <input name="Email"  ng-class="{ 'input-error' :  inputError }" type="email" ng-model="email" placeholder="Email address" required />
                 <button type="submit">Get Started</button>
             </form>
         </div>
