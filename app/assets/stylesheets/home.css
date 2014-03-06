@@ -58,6 +58,10 @@
     float: left;
 }
 
+input.input-error {
+    color: #dd5147;
+}
+
 .tutorial-section {
     font-size: 20px;
     font-weight: 400;

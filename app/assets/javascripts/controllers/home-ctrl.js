@@ -3,10 +3,17 @@ Bundle.controller('HomeCtrl', ['$scope',
 
         // initializing scope variables
         $scope.email = "";
+        $scope.inputError = false;
 
         // get started
         $scope.proceed = function() {
-            console.log($scope.email);
+            $scope.inputError = false;
+            
+            if ($scope.email_form.$valid) {
+                console.log($scope.email);
+            } else {
+                $scope.inputError = true;
+            }
         };
 
 
