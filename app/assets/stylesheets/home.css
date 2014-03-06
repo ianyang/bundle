@@ -4,6 +4,7 @@
     overflow: hidden;
     background: #171d1f url("background.png") no-repeat center center;
     background-size: cover;
+    padding: 0 10px;
 }
 
 .home-container .content-container {
@@ -15,7 +16,7 @@
 .home-logo {
     display: block;
     width: 80px;
-    margin: 120px auto 40px auto;
+    margin: 120px auto 36px auto;
 }
 
 .home-container h1 {
@@ -28,8 +29,8 @@
 }
 
 .get-started-bar {
-    max-width: 400px;
-    margin: 60px auto;
+    max-width: 420px;
+    margin: 60px auto 80px auto;
     height: 56px;
     background: #ffffff;
     -webkit-border-radius: 30px;
@@ -51,7 +52,7 @@
     width: 65%;
     height: 56px;
     border: none;
-    color: #8f989b;
+    color: #323b3d;
     font-size: 16px;
     padding: 0 34px;
     float: left;
@@ -61,12 +62,13 @@
     font-size: 20px;
     font-weight: 400;
     color: #ffffff;
+    overflow: hidden;
 }
 
 .tutorial-steps {
     display: none;
     max-width: 420px;
-    margin: 60px auto 0 auto;
+    margin: 0 auto;
 }
 
 .tutorial-steps.active {
@@ -76,19 +78,19 @@
 .tutorial-steps.one {
     background: url("icon-step-one@2x.png") no-repeat center left;
     background-size: 48px;
-    padding-left: 60px;
+    padding-left: 72px;
 }
 
 .tutorial-steps.two {
     background: url("icon-step-two@2x.png") no-repeat center left;
     background-size: 48px;
-    padding-left: 60px;
+    padding-left: 72px;
 }
 
 .tutorial-steps.three {
     background: url("icon-step-three@2x.png") no-repeat center left;
     background-size: 48px;
-    padding-left: 60px;
+    padding-left: 72px;
 }
 
 .arrow-left,
