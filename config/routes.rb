@@ -1,4 +1,6 @@
 Bundle::Application.routes.draw do
+
+  root 'public#index'
   resources :transactions
 
   resources :items
