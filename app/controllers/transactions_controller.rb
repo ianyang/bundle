@@ -10,6 +10,7 @@ class TransactionsController < ApplicationController
   # GET /transactions/1
   # GET /transactions/1.json
   def show
+  render json: Transaction.find(params[:id]).to_json(:include => :items)
   end
 
   # GET /transactions/new
