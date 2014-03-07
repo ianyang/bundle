@@ -3,15 +3,16 @@ Bundle.controller('CreateCtrl', ['$scope', '$http', '$location',
 
         $scope.items = null;
         $scope.appReady = false;
-        $scope.fullPath = $location.$$absUrl;
         $scope.id = $location.path().split('/')[1]
         $scope.token = $location.path().split('/')[2];
+        $scope.fullPath = $location.$$host + '/' + $scope.id;
+        $scope.saving = false;
         $scope.bundleActivated = false;
         $scope.totalPrice = 500;
         $scope.bundlePrice = 1000;
 
         var fetchItems = function() {
-            $http.get('/api/transactions/'+$scope.id).success(function(data){
+            $http.get('/api/transactions/'+$scope.id+'/'+$scope.token).success(function(data){
                 $scope.appReady = true;
                 $scope.items = data.items;
             }).error(function(data){
@@ -47,7 +48,8 @@ Bundle.controller('CreateCtrl', ['$scope', '$http', '$location',
         };
 
         $scope.updateItems = function() {
-            console.log($scope.items);
+            $scope.saving = true;
+            $scope.saving = false;
         };
 
         var init = function() {
