@@ -12,11 +12,11 @@
                     </div>
                     <div class="info-wrapper">
                         <div class="item-name">
-                            <input type="text" name="Name" placeholder="Item name" ng-model="items.name" ng-change="updateItems()" maxlength="22" />
+                            <input type="text" name="Name" placeholder="Item name" ng-model="items.name" ng-blur="updateItems()" maxlength="22" />
                         </div>
 
                         <div class="item-price">
-                            $ <input type="tel" name="Price" placeholder="add a price" ng-model="items.price" ng-change="updateItems()" maxlength="5" />
+                            $ <input type="tel" name="Price" placeholder="add a price" ng-model="items.price" ng-blur="updateItems()" maxlength="5" />
                         </div>
                     </div>
                 </div>
@@ -35,6 +35,7 @@
     </div>
 </div>
 
+<div class="saving" ng-show="saving">Saving...</div>
 
 <div class="main-footer">
     <div class="content-container">
