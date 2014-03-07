@@ -129,3 +129,11 @@ input.input-error {
     right: 0;
 }
 
+@media screen and (max-width: 719px) {
+    .tutorial-steps {
+        width: calc(100% - 80px);
+        width: -webkit-calc(100% - 80px);
+        font-size: 16px;
+        padding: 4px 0 4px 72px;
+    }
+}
