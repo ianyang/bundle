@@ -5,6 +5,9 @@ Bundle::Application.routes.draw do
   get 'create/:id' => 'public#index'
   get 'view/:id' => 'public#index'
 
+  match 'api/transactions/:id(/:token)' => 'transactions#update', :via => :put
+  match 'api/transactions/:id(/:token)' => 'transactions#show', :via => :get
+
   scope :api, defaults: {format: :json} do
     resources :transactions, only: [:show, :create, :update]
   end

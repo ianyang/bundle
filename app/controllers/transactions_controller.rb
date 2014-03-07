@@ -11,7 +11,7 @@ class TransactionsController < ApplicationController
   # GET /transactions/1
   # GET /transactions/1.json
   def show
-    render json: Transaction.find(params[:id]).to_json(:include => :items, :except => :token)
+    render json: @transaction.to_json(:include => :items, :except => :token)
   end
 
   # GET /transactions/new
@@ -41,7 +41,6 @@ class TransactionsController < ApplicationController
   # PATCH/PUT /transactions/1
   # PATCH/PUT /transactions/1.json
   def update
-    @transaction = Transaction.find_by token: params[:id]
     respond_to do |format|
       if @transaction.update(transaction_params)
         format.html { redirect_to @transaction, notice: 'Transaction was successfully updated.' }
@@ -66,7 +65,12 @@ class TransactionsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_transaction
-      @transaction = Transaction.find(params[:id])
+      @transaction = Transaction.find(params[:id])      
+      if params[:token]
+        if @transaction.token != params[:token]
+	  @transaction = nil
+	end
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
