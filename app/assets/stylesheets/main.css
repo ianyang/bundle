@@ -50,6 +50,8 @@
        -moz-border-radius: 8px;
             border-radius: 8px;
     margin: 0 auto;
+    overflow: hidden;
+    background: #000000;
 }
 
 .photo-wrapper.add {
@@ -61,6 +63,11 @@
 
 .photo-wrapper.add:hover {
     opacity: 1;
+}
+
+.photo-wrapper img {
+    height: 100%;
+    margin: 0 auto;
 }
 
 .photo-uploader {
@@ -90,6 +97,69 @@
     color: #8f989b;
     opacity: 0.3;
     margin: 0;
+}
+
+.main-body input {
+    border: none;
+    background: none;
+}
+
+.main-body .item-name input {
+    font-size: 20px;
+    font-weight: 700;
+    color: #323a3d;
+    margin: 16px 0 4px 0;
+}
+
+.main-body .item-price,
+.main-body .item-price input {
+    color: #323a3d;
+}
+
+.main-body ::-webkit-input-placeholder {
+    color: #323a3d;
+}
+
+.main-body :-moz-placeholder {
+    color: #323a3d;
+}
+
+.main-body ::-moz-placeholder {
+    color: #323a3d;
+}
+
+.main-body  input[type=text]:-ms-input-placeholder,
+.main-body  input[type=number]:-ms-input-placeholder,
+.main-body  input[type=email]:-ms-input-placeholder,
+.main-body  input[type=password]:-ms-input-placeholder {
+    color: #323a3d;
+}
+
+.main-body :-ms-input-placeholder {
+    color: #323a3d;
+}
+
+.main-body .item-name ::-webkit-input-placeholder {
+    font-size: 20px;
+}
+
+.main-body .item-name :-moz-placeholder {
+    font-size: 20px;
+}
+
+.main-body .item-name ::-moz-placeholder {
+    font-size: 20px;
+}
+
+.main-body .item-name  input[type=text]:-ms-input-placeholder,
+.main-body .item-name  input[type=number]:-ms-input-placeholder,
+.main-body .item-name  input[type=email]:-ms-input-placeholder,
+.main-body .item-name  input[type=password]:-ms-input-placeholder {
+    font-size: 20px;
+}
+
+.main-body .item-name :-ms-input-placeholder {
+    font-size: 20px;
 }
 
 .main-footer {
@@ -138,7 +208,7 @@
 
 .share-bar {
     float: right;
-    width: 240px;
+    width: 40%;
     height: 52px;
     margin-top: 20px;
     background: #ffffff;
@@ -180,5 +250,11 @@
 @media screen and (max-width: 719px) {
     .item-container {
         width: 100%;
+    }
+    .price-container {
+        display: none;
+    }
+    .price-container.active-price {
+        display: block;
     }
 }

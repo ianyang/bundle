@@ -6,6 +6,7 @@ Bundle.controller('CreateCtrl', ['$scope', '$http', '$location',
         $scope.fullPath = $location.$$absUrl;
         $scope.id = $location.path().split('/')[1]
         $scope.token = $location.path().split('/')[2];
+        $scope.bundleActivated = false;
         $scope.totalPrice = 500;
         $scope.bundlePrice = 1000;
 
@@ -43,6 +44,10 @@ Bundle.controller('CreateCtrl', ['$scope', '$http', '$location',
             // }).then(function(data) {
             //     console.log(data);
             // });
+        };
+
+        $scope.updateItems = function() {
+            console.log($scope.items);
         };
 
         var init = function() {
