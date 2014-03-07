@@ -20,7 +20,7 @@
 }
 
 .main-body {
-    padding-top: 80px;
+    padding: 80px 0 100px 0;
     width: 100%;
     overflow: hidden;
 }
@@ -37,8 +37,9 @@
 
 .item-container {
     width: 25%;
-    padding: 0 16px;
+    padding: 0 16px 30px 16px;
     overflow: hidden;
+    float: left;
 }
 
 .photo-wrapper {

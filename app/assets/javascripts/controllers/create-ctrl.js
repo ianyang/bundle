@@ -51,4 +51,11 @@ Bundle.controller('CreateCtrl', ['$scope', '$http', '$location',
 
         init();
 
+
+        // dom manipulation js
+
+        $(".photo-uploader").on("change", function() {
+            $scope.addItem(this.files);
+        });
+
 }]);

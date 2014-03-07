@@ -14,24 +14,35 @@
                     <h4>add a price</h4>
                 </div>
             </div>
+
+            <div class="item-container">
+                <div class="photo-wrapper add">
+                    <input type="file" class="photo-uploader"/>
+                </div>
+                <div class="info-wrapper">
+                    <h3>Item title</h3>
+                    <h4>add a price</h4>
+                </div>
+            </div>
         </div>
     </div>
+</div>
 
-    <div class="main-footer">
-        <div class="content-container">
-            <div class="price-container">
-                <div class="title">TOTAL PRICE</div>
-                <div class="price">${{ totalPrice || currency}}</div>
-            </div>
 
-            <div class="price-container bundle-price">
-                <div class="title">BUNDLE PRICE</div>
-                <div class="price">${{ bundlePrice || currency}}</div>
-            </div>
+<div class="main-footer">
+    <div class="content-container">
+        <div class="price-container">
+            <div class="title">TOTAL PRICE</div>
+            <div class="price">${{ totalPrice || currency}}</div>
+        </div>
 
-            <div class="share-bar">
-                <div class="uuid-container">{{ fullPath }}</div>
-            </div>
+        <div class="price-container bundle-price">
+            <div class="title">BUNDLE PRICE</div>
+            <div class="price">${{ bundlePrice || currency}}</div>
+        </div>
+
+        <div class="share-bar">
+            <div class="uuid-container">{{ fullPath }}</div>
         </div>
     </div>
 </div>
