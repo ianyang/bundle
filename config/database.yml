@@ -56,5 +56,5 @@ production:
   encoding: unicode
   database: bundle_production
   pool: 5
-  username: postgres
-  password: Yea4Ritas!123
+  username: 
+  password:

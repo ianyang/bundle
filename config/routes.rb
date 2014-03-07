@@ -1,12 +1,13 @@
 Bundle::Application.routes.draw do
 
   root 'public#index'
-  get 'create/:id' => 'public#index'
-  get 'view/:id' => 'public#index'
 
-  resources :transactions
+  get '/:id/:token' => 'public#index'
+  get '/:id' => 'public#index'
 
-  resources :items
+  scope :api, defaults: {format: :json} do
+    resources :transactions, only: [:show, :create, :update]
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

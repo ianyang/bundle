@@ -25,6 +25,11 @@
     margin: 0 auto;
 }
 
+.home-container h1 .strong{
+    font-size: 32px;
+    font-weight: 700;
+}
+
 .get-started-bar {
     max-width: 420px;
     margin: 60px auto 80px auto;
@@ -46,8 +51,12 @@
 }
 
 .get-started-bar button:hover {
+    background: #50a18e;
+}
 
-    background: #000000;
+.get-started-bar button.loading {
+    background: #8f989b;
+    cursor: wait;
 }
 
 .get-started-bar input {
@@ -90,15 +99,10 @@ input.input-error {
 }
 
 .tutorial-steps.active {
-    /*display: block;*/
-    
-    
     opacity:1;
     position:absolute;
     left:14%;
     transition: opacity 2s;
-
-    
 }
 
 .tutorial-steps.one {
@@ -143,3 +147,11 @@ input.input-error {
     right: 0;
 }
 
+@media screen and (max-width: 719px) {
+    .tutorial-steps {
+        width: calc(100% - 80px);
+        width: -webkit-calc(100% - 80px);
+        font-size: 16px;
+        padding: 4px 0 4px 72px;
+    }
+}

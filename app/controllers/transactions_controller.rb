@@ -1,4 +1,5 @@
 class TransactionsController < ApplicationController
+  protect_from_forgery with: :null_session, :if => Proc.new { |c| c.request.format == 'application/json' }
   before_action :set_transaction, only: [:show, :edit, :update, :destroy]
 
   # GET /transactions
@@ -10,6 +11,7 @@ class TransactionsController < ApplicationController
   # GET /transactions/1
   # GET /transactions/1.json
   def show
+    render json: Transaction.find(params[:id]).to_json(:include => :items, :except => :token)
   end
 
   # GET /transactions/new
@@ -25,11 +27,10 @@ class TransactionsController < ApplicationController
   # POST /transactions.json
   def create
     @transaction = Transaction.new(transaction_params)
-
     respond_to do |format|
       if @transaction.save
         format.html { redirect_to @transaction, notice: 'Transaction was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @transaction }
+	format.json { render json: Transaction.last }
       else
         format.html { render action: 'new' }
         format.json { render json: @transaction.errors, status: :unprocessable_entity }
@@ -40,6 +41,7 @@ class TransactionsController < ApplicationController
   # PATCH/PUT /transactions/1
   # PATCH/PUT /transactions/1.json
   def update
+    @transaction = Transaction.find_by token: params[:id]
     respond_to do |format|
       if @transaction.update(transaction_params)
         format.html { redirect_to @transaction, notice: 'Transaction was successfully updated.' }
@@ -69,6 +71,6 @@ class TransactionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def transaction_params
-      params.require(:transaction).permit(:price, :discourt_rate, :price)
+      params.require(:transaction).permit(:price, :discount_rate, :email)
     end
 end

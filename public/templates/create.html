@@ -1,16 +1,55 @@
+<div class="main-header"></div>
+
 <div class="main-container">
-    <div class="main-header">
-
-    </div>
-
-    <div class="main-body">
+    <div class="main-body" ng-show="appReady">
         <div class="content-container">
+            <h1>Drag and drop multiple photos or click add to get started. Create a bundle discount to sell your stuff even faster.</h1>
+
+            <form name="email_form" ng-submit="updateItems()" novalidate autocomplete="off">
+                <div class="item-container">
+                    <div class="photo-wrapper">
+                        <img src="/assets/mockbed.jpeg">
+                    </div>
+                    <div class="info-wrapper">
+                        <div class="item-name">
+                            <input type="text" name="Name" placeholder="Item name" ng-model="items.name" ng-change="updateItems()" maxlength="22" />
+                        </div>
+
+                        <div class="item-price">
+                            $ <input type="tel" name="Price" placeholder="add a price" ng-model="items.price" ng-change="updateItems()" maxlength="5" />
+                        </div>
+                    </div>
+                </div>
+            </form>
 
             <div class="item-container">
-
-
+                <div class="photo-wrapper add">
+                    <input type="file" class="photo-uploader"/>
+                </div>
+                <div class="info-wrapper">
+                    <h3>Item title</h3>
+                    <h4>add a price</h4>
+                </div>
             </div>
+        </div>
+    </div>
+</div>
 
+
+<div class="main-footer">
+    <div class="content-container">
+        <div class="price-container" ng-class="{ 'active-price' :  !bundleActivated }">
+            <div class="title">TOTAL PRICE</div>
+            <div class="price">${{ totalPrice || currency}}</div>
+        </div>
+
+        <div class="price-container bundle-price" ng-class="{ 'active-price' :  bundleActivated }">
+            <div class="title">BUNDLE PRICE</div>
+            <div class="price">${{ bundlePrice || currency}}</div>
+        </div>
+
+        <div class="share-bar">
+            <div class="uuid-container">{{ fullPath }}</div>
         </div>
     </div>
 </div>

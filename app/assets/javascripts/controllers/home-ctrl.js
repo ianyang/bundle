@@ -1,23 +1,31 @@
-Bundle.controller('HomeCtrl', ['$scope',
-    function($scope) {
+Bundle.controller('HomeCtrl', ['$scope', '$http', '$location',
+    function($scope, $http, $location) {
 
         // initializing scope variables
         $scope.email = "";
         $scope.inputError = false;
+        $scope.loading = false;
         var currentTutorial = 1;
-
 
         // get started
         $scope.proceed = function() {
+            if ($scope.loading) return;
+
             $scope.inputError = false;
-            
+
             if ($scope.email_form.$valid) {
-                console.log($scope.email);
+                $scope.loading = true;
+                $http.post('/api/transactions', {transaction: {email: $scope.email}}).success(function(data){
+                    $scope.loading = false;
+                    $location.path('/'+data.id+'/'+data.token);
+                }).error(function(data){
+                    $scope.loading = false;
+                    console.log("HTTP Error");
+                });
             } else {
                 $scope.inputError = true;
             }
         };
-
 
         // carousel
         var moveTutorial = function(direction) {
