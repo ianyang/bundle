@@ -21,33 +21,27 @@ Bundle.controller('CreateCtrl', ['$scope', '$http', '$location',
         };
 
         $scope.addItem = function(files) {
-            debugger
-
             //Create some new form data to submit
-            // var fd = new FormData();
-            // //Grab the first selected file
-            // fd.append("image", file[0]);
+            var fd = new FormData();
 
-            // $http.post('/user/profile/photo', fd, {
-            //     withCredentials: true,
-            //     headers: {
-            //         'Content-Type': undefined
-            //     },
-            //     transformRequest: angular.identity
-            // }).success(function(data) {
-            //     if (data.Success) {
-            //         console.log('PURL:', data.Result);
-            //         $scope.user.info.PhotoUrl = data.Result;
+            //Grab the first selected file
+            fd.append("image", files[0]);
 
-            //     }
-            // }).error(function(data) {
-            //     console.log('IMG upload failure: ', data);
-            // }).then(function(data) {
-            //     console.log(data);
-            // });
+            $http.post('/transactions/'+$scope.id+'/'+$scope.token, fd, {
+                withCredentials: true,
+                headers: {
+                    'Content-Type': undefined
+                },
+                transformRequest: angular.identity
+            }).success(function(data) {
+                debugger
+            }).error(function(data) {
+                console.log('IMG upload failure: ', data);
+            })
         };
 
         $scope.updateItems = function() {
+            console.log("saving");
             $scope.saving = true;
             $scope.saving = false;
         };
