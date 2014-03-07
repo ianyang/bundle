@@ -1,14 +1,3 @@
-.main-container {
-    width: 100%;
-    height: 100%;
-    overflow: scroll;
-    overflow-x: hidden;
-}
-
-.main-container .content-container {
-    padding: 0;
-}
-
 .main-header {
     width: 100%;
     height: 80px;
@@ -19,10 +8,23 @@
     top: 0;
 }
 
-.main-body {
-    padding-top: 80px;
+.main-container {
+    padding: 80px 0 96px 0;
     width: 100%;
+    height: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.main-container .content-container {
+    padding: 0;
+}
+
+.main-body {    
+    width: 100%;
+    min-height: 100%;
     overflow: hidden;
+    background: #ffffff;
 }
 
 .main-body h1 {
@@ -33,12 +35,14 @@
     font-weight: 400;
     font-size: 22px;
     line-height: 32px;
+    padding: 0 16px;
 }
 
 .item-container {
     width: 25%;
-    padding: 0 16px;
+    padding: 0 16px 30px 16px;
     overflow: hidden;
+    float: left;
 }
 
 .photo-wrapper {
@@ -49,6 +53,8 @@
        -moz-border-radius: 8px;
             border-radius: 8px;
     margin: 0 auto;
+    overflow: hidden;
+    background: #000000;
 }
 
 .photo-wrapper.add {
@@ -60,6 +66,11 @@
 
 .photo-wrapper.add:hover {
     opacity: 1;
+}
+
+.photo-wrapper img {
+    height: 100%;
+    margin: 0 auto;
 }
 
 .photo-uploader {
@@ -91,6 +102,69 @@
     margin: 0;
 }
 
+.main-body input {
+    border: none;
+    background: none;
+}
+
+.main-body .item-name input {
+    font-size: 20px;
+    font-weight: 700;
+    color: #323a3d;
+    margin: 16px 0 4px 0;
+}
+
+.main-body .item-price,
+.main-body .item-price input {
+    color: #323a3d;
+}
+
+.main-body ::-webkit-input-placeholder {
+    color: #323a3d;
+}
+
+.main-body :-moz-placeholder {
+    color: #323a3d;
+}
+
+.main-body ::-moz-placeholder {
+    color: #323a3d;
+}
+
+.main-body  input[type=text]:-ms-input-placeholder,
+.main-body  input[type=number]:-ms-input-placeholder,
+.main-body  input[type=email]:-ms-input-placeholder,
+.main-body  input[type=password]:-ms-input-placeholder {
+    color: #323a3d;
+}
+
+.main-body :-ms-input-placeholder {
+    color: #323a3d;
+}
+
+.main-body .item-name ::-webkit-input-placeholder {
+    font-size: 20px;
+}
+
+.main-body .item-name :-moz-placeholder {
+    font-size: 20px;
+}
+
+.main-body .item-name ::-moz-placeholder {
+    font-size: 20px;
+}
+
+.main-body .item-name  input[type=text]:-ms-input-placeholder,
+.main-body .item-name  input[type=number]:-ms-input-placeholder,
+.main-body .item-name  input[type=email]:-ms-input-placeholder,
+.main-body .item-name  input[type=password]:-ms-input-placeholder {
+    font-size: 20px;
+}
+
+.main-body .item-name :-ms-input-placeholder {
+    font-size: 20px;
+}
+
 .main-footer {
     width: 100%;
     height: 96px;
@@ -104,7 +178,7 @@
 .price-container {
     float: left;
     height: 96px;
-    padding: 28px 32px;
+    padding: 28px 32px 0 8px;
 }
 
 .main-footer .title {
@@ -137,9 +211,9 @@
 
 .share-bar {
     float: right;
-    width: 240px;
+    width: 40%;
     height: 52px;
-    margin-top: 20px;
+    margin-top: 24px;
     background: #ffffff;
     border: 2px solid #ffffff;
     -webkit-border-radius: 30px;
@@ -170,6 +244,18 @@
     padding: 0;
 }*/
 
+.saving {
+    padding: 8px;
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    background: rgba(0,0,0,0.1);
+    -webkit-border-radius: 10px;
+       -moz-border-radius: 10px;
+            border-radius: 10px;
+    color: #8f989b;
+}
+
 @media screen and (min-width: 720px) and (max-width: 1023px) {
     .item-container {
         width: 50%;
@@ -179,5 +265,11 @@
 @media screen and (max-width: 719px) {
     .item-container {
         width: 100%;
+    }
+    .price-container {
+        display: none;
+    }
+    .price-container.active-price {
+        display: block;
     }
 }

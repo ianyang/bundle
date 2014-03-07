@@ -78,16 +78,31 @@ input.input-error {
     font-weight: 400;
     color: #ffffff;
     overflow: hidden;
+    
+    position:relative;
+    height:100px;
+   
 }
 
 .tutorial-steps {
-    display: none;
+   /* display: none;*/
+    position:absolute;
+    top:10px;
+    left:14%;
+    opacity:0;
     max-width: 420px;
     margin: 0 auto;
+    transition: opacity.2s;
+    
+    
+  
 }
 
 .tutorial-steps.active {
-    display: block;
+    opacity:1;
+    position:absolute;
+    left:14%;
+    transition: opacity 2s;
 }
 
 .tutorial-steps.one {
@@ -112,13 +127,16 @@ input.input-error {
 .arrow-right {
     width: 26px;
     position: absolute;
-    top: 0;
+    top: 10px;
     cursor: pointer;
+    transition:.9s;
 }
 
 .arrow-left.end,
 .arrow-right.end {
     opacity: 0.4;
+    cursor:default;
+    transition:.9s;
 }
 
 .arrow-left {
@@ -129,3 +147,11 @@ input.input-error {
     right: 0;
 }
 
+@media screen and (max-width: 719px) {
+    .tutorial-steps {
+        width: calc(100% - 80px);
+        width: -webkit-calc(100% - 80px);
+        font-size: 16px;
+        padding: 4px 0 4px 72px;
+    }
+}
