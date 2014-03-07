@@ -175,7 +175,7 @@
 .price-container {
     float: left;
     height: 96px;
-    padding: 28px 32px;
+    padding: 28px 32px 0 8px;
 }
 
 .main-footer .title {
@@ -210,7 +210,7 @@
     float: right;
     width: 40%;
     height: 52px;
-    margin-top: 20px;
+    margin-top: 24px;
     background: #ffffff;
     border: 2px solid #ffffff;
     -webkit-border-radius: 30px;
