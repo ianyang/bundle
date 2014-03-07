@@ -27,11 +27,11 @@ Bundle.config(function($locationProvider, $httpProvider, $routeProvider) {
         templateUrl: '../templates/home.html',
         controller: 'HomeCtrl'
     })
-    .when('/view/:id', {
+    .when('/:id', {
         templateUrl: '../templates/view.html',
         controller: 'ViewCtrl'
     })
-    .when('/create/:id', {
+    .when('/:id/:token', {
         templateUrl: '../templates/create.html',
         controller: 'CreateCtrl'
     })

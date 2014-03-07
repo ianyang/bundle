@@ -3,10 +3,15 @@ Bundle.controller('CreateCtrl', ['$scope', '$http', '$location',
 
         $scope.items = null;
         $scope.appReady = false;
-        $scope.UUID = $location.path().split('/')[2];
+        $scope.fullPath = $location.$$absUrl;
+        $scope.id = $location.path().split('/')[1]
+        $scope.token = $location.path().split('/')[2];
+        $scope.bundleActivated = false;
+        $scope.totalPrice = 500;
+        $scope.bundlePrice = 1000;
 
         var fetchItems = function() {
-            $http.get('/api/transactions/'+$scope.UUID).success(function(data){
+            $http.get('/api/transactions/'+$scope.id).success(function(data){
                 $scope.appReady = true;
                 $scope.items = data.items;
             }).error(function(data){
@@ -41,10 +46,21 @@ Bundle.controller('CreateCtrl', ['$scope', '$http', '$location',
             // });
         };
 
+        $scope.updateItems = function() {
+            console.log($scope.items);
+        };
+
         var init = function() {
             fetchItems();
         };
 
         init();
+
+
+        // dom manipulation js
+
+        $(".photo-uploader").on("change", function() {
+            $scope.addItem(this.files);
+        });
 
 }]);

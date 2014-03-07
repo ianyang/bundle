@@ -2,8 +2,8 @@ Bundle::Application.routes.draw do
 
   root 'public#index'
 
-  get 'create/:id' => 'public#index'
-  get 'view/:id' => 'public#index'
+  get '/:id/:token' => 'public#index'
+  get '/:id' => 'public#index'
 
   match 'api/transactions/:id(/:token)' => 'transactions#update', :via => :put
   match 'api/transactions/:id(/:token)' => 'transactions#show', :via => :get
