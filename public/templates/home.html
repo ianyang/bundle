@@ -1,29 +1,30 @@
 <div class="home-container">
     <div class="content-container">
         <img src="/assets/icon-logo@2x.png" class="home-logo">
-        <h1><strong>Bundle</strong>, the simplest way to sell furniture to the next tenants.</h1>
+        <h1><strong><span style= "color:#D0ddE0; font-size:1.1em;">Bundle</span></strong>, the simplest way to sell furniture to the next tenants.</h1>
 
         <div class="get-started-bar">
             <form name="email_form" ng-submit="proceed()" novalidate autocomplete="off">
                 <input name="Email"  ng-class="{ 'input-error' :  inputError }" type="email" ng-model="email" placeholder="Email address" required />
-                <button type="submit">Get Started</button>
+                <button type="submit" style="background-color:#63B8AC">Get Started</button>
             </form>
         </div>
 
+
         <div class="tutorial-section">
-            <img src="/assets/icon-arrow-left@2x.png" class="arrow-left end" ng-click="moveLeft()">
+            <img src="/assets/icon-arrow-left@2x.png" class="arrow-left end" id="arrow1" ng-click="moveLeft()">
 
-            <div class="tutorial-steps one active">
-                Gumbo beet greens corn soko endive gumbo gourd shallot courgette tatsoi.
+            <div class="tutorial-steps one active" id="card1">
+                Save the backache, leave the heavy stuff behind with one simple sale.
             </div>
-            <div class="tutorial-steps two">
-                Gumbo beet greens corn soko endive gumbo gourd shallot courgette tatsoi.
+            <div class="tutorial-steps two " id="card2">
+                Package your furniture for the best value, without the hassle.
             </div>
-            <div class="tutorial-steps three">
-                Gumbo beet greens corn soko endive gumbo gourd shallot courgette tatsoi.
+            <div class="tutorial-steps three" id="card3">
+                Save on moving costs, sell to the next tenant for money to the new place.
             </div>
 
-            <img src="/assets/icon-arrow-right@2x.png" class="arrow-right" ng-click="moveRight()">
+            <img src="/assets/icon-arrow-right@2x.png" class="arrow-right" id="arrow2" ng-click="moveRight()">
         </div>
     </div>
 </div>

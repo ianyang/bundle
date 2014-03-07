@@ -45,6 +45,11 @@
     color: #ffffff;
 }
 
+.get-started-bar button:hover {
+
+    background: #000000;
+}
+
 .get-started-bar input {
     width: 65%;
     height: 56px;
@@ -64,16 +69,36 @@ input.input-error {
     font-weight: 400;
     color: #ffffff;
     overflow: hidden;
+    
+    position:relative;
+    height:100px;
+   
 }
 
 .tutorial-steps {
-    display: none;
+   /* display: none;*/
+    position:absolute;
+    top:10px;
+    left:14%;
+    opacity:0;
     max-width: 420px;
     margin: 0 auto;
+    transition: opacity.2s;
+    
+    
+  
 }
 
 .tutorial-steps.active {
-    display: block;
+    /*display: block;*/
+    
+    
+    opacity:1;
+    position:absolute;
+    left:14%;
+    transition: opacity 2s;
+
+    
 }
 
 .tutorial-steps.one {
@@ -98,13 +123,16 @@ input.input-error {
 .arrow-right {
     width: 26px;
     position: absolute;
-    top: 0;
+    top: 10px;
     cursor: pointer;
+    transition:.9s;
 }
 
 .arrow-left.end,
 .arrow-right.end {
     opacity: 0.4;
+    cursor:default;
+    transition:.9s;
 }
 
 .arrow-left {
