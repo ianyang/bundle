@@ -69,6 +69,7 @@ class TransactionsController < ApplicationController
       if params[:token]
         if @transaction.token != params[:token]
 	  @transaction = nil
+          render json: "{ error: true, message: \"Error 403, you don't have permissions for this operation.\" }", status: :forbidden
 	end
       end
     end
