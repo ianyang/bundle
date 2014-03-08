@@ -11,7 +11,7 @@ Bundle::Application.routes.draw do
     end
   end
 
-  match 'api/transactions/:id/:token' => 'transactions#update', :via => :put
+  match 'api/transactions/:id/:token' => 'transactions#update', :via => [:patch, :put]
   match 'api/transactions/:id(/:token)' => 'transactions#show', :via => :get
 
 

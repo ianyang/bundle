@@ -77,6 +77,6 @@ class TransactionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def transaction_params
-      params.require(:transaction).permit(:price, :discount_rate, :email, :items)
+      params.require(:transaction).permit!#(:price, :discount_rate, :email, items_attributes: [:id, :title, :description, :price])
     end
 end
