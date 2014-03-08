@@ -1,1 +1,32 @@
-This is the view page
+<div class="main-header"></div>
+
+<div class="main-container">
+	<div class="main-body">
+		<div class="content-container">
+			<h1>Select individual pieces to get started or select Bundle package to see discount price.</h1>
+				<div class="item-container">
+					<div class="photo-wrapper">
+							<img src="/assets/mockbed.jpeg">
+					</div>
+					<div class="info-wrapper">
+                    <h3 style="opacity:1">Item title</h3>
+                    <h4 style="opacity:1">$ Item price</h4>
+                </div>
+				</div>
+		</div>
+	</div>
+</div>
+
+<div class="main-footer">
+    <div class="content-container">
+        <div class="price-container" ng-class="{ 'active-price' :  !bundleActivated }">
+            <div class="title">TOTAL PRICE</div>
+            <div class="price">${{ totalPrice || currency}}</div>
+        </div>
+
+        <div class="price-container bundle-price" ng-class="{ 'active-price' :  bundleActivated }">
+            <div class="title">BUNDLE PRICE</div>
+            <div class="price">${{ bundlePrice || currency}}</div>
+        </div>
+    </div>
+</div>
