@@ -1,8 +1,7 @@
 'use strict';
-var Bundle;
 console.log("loading bundle app");
 
-Bundle = angular.module('bundle', ['ngRoute']);
+var Bundle = angular.module('bundle', ['ngRoute']);
 Bundle.config(function($locationProvider, $httpProvider, $routeProvider) {
 
     // Enable CORS
