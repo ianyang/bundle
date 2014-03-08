@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 
-//= require angular
+//= require angular-min
 //= require angular-router
 
 //= require qrcode-min

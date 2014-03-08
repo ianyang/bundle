@@ -24,9 +24,6 @@ gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-# Angular
-gem 'angularjs-rails'
-
 # Image handling
 gem 'paperclip'
 gem 'aws-sdk'
