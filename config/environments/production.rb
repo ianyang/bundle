@@ -49,9 +49,9 @@ Bundle::Application.configure do
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {
-      :bucket => ENV['bundleapp'],
-      :access_key_id => ENV['AKIAJTZOKUJF7SZE2UPA'],
-      :secret_access_key => ENV['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']
+      :bucket => ENV[AMAZON_BUCKET],
+      :access_key_id => ENV[AMAZON_ID],
+      :secret_access_key => ENV[AMAZON_KEY]
     }
   }
 
