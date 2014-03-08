@@ -155,3 +155,10 @@ input.input-error {
         padding: 4px 0 4px 72px;
     }
 }
+
+@media screen and (max-height: 640px) {
+    .home-container {
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+}
