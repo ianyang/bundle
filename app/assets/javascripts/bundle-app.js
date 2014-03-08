@@ -1,5 +1,4 @@
 'use strict';
-console.log("loading bundle app");
 
 var Bundle = angular.module('bundle', ['ngRoute']);
 Bundle.config(['$locationProvider', '$httpProvider', '$routeProvider',

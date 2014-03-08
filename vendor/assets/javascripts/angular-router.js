@@ -1,5 +1,3 @@
-console.log("loading angular router");
-
 /**
  * @license AngularJS v1.2.14
  * (c) 2010-2014 Google, Inc. http://angularjs.org
