@@ -42,9 +42,9 @@ class TransactionsController < ApplicationController
   # PATCH/PUT /transactions/1.json
   def update
     respond_to do |format|
-      if @transaction.update(transaction_params)
+      if @transaction.update_attributes(transaction_params)
         format.html { redirect_to @transaction, notice: 'Transaction was successfully updated.' }
-        format.json { head :no_content }
+        format.json { render json: "{}" }
       else
         format.html { render action: 'edit' }
         format.json { render json: @transaction.errors, status: :unprocessable_entity }
@@ -77,6 +77,6 @@ class TransactionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def transaction_params
-      params.require(:transaction).permit(:price, :discount_rate, :email, :items)
+      params.require(:transaction).permit!#(:price, :discount_rate, :email, items_attributes: [:id, :title, :description, :price])
     end
 end
