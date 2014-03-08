@@ -16,4 +16,6 @@
 //= require angular
 //= require angular-router
 
+//= require qrcode-min
+
 //= require_tree .

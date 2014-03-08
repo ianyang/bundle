@@ -256,6 +256,10 @@
     color: #8f989b;
 }
 
+.print-container {
+    display: none;
+}
+
 @media screen and (min-width: 720px) and (max-width: 1023px) {
     .item-container {
         width: 50%;
@@ -271,5 +275,13 @@
     }
     .price-container.active-price {
         display: block;
+    }
+}
+
+@media print {
+    .print-container {
+        display: block;
+        width: 100%;
+        height: 100%;
     }
 }
