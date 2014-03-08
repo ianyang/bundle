@@ -13,7 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 
-//= require angular-min.js
-//= require angular-router.js
+//= require angular-min
+//= require angular-router
+
+//= require qrcode-min
+//= require fastclick
 
 //= require_tree .

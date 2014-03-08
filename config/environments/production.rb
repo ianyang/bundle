@@ -23,11 +23,11 @@ Bundle::Application.configure do
   config.serve_static_assets = true
 
   # Compress JavaScripts and CSS.
-  config.assets.js_compressor = :uglifier
+  # config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Generate digests for assets URLs.
   config.assets.digest = true
@@ -49,9 +49,9 @@ Bundle::Application.configure do
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {
-      :bucket => ENV['bundleapp'],
-      :access_key_id => ENV['AKIAJTZOKUJF7SZE2UPA'],
-      :secret_access_key => ENV['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']
+      :bucket => ENV['AMAZON_BUCKET'],
+      :access_key_id => ENV['AMAZON_ID'],
+      :secret_access_key => ENV['AMAZON_KEY']
     }
   }
 

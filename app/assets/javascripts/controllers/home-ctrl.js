@@ -35,6 +35,7 @@ Bundle.controller('HomeCtrl', ['$scope', '$http', '$location',
                     //alert(currentTutorial)
                     $(card2).addClass("active");
                     $(card1).removeClass("active");
+                    $(card1).addClass("left");
                     $(arrow1).removeClass("end");
                      currentTutorial=2;
                 }

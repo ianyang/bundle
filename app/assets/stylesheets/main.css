@@ -247,13 +247,17 @@
 .saving {
     padding: 8px;
     position: absolute;
-    top: 100px;
+    top: 20px;
     right: 20px;
     background: rgba(0,0,0,0.1);
     -webkit-border-radius: 10px;
        -moz-border-radius: 10px;
             border-radius: 10px;
     color: #8f989b;
+}
+
+.print-container {
+    display: none;
 }
 
 @media screen and (min-width: 720px) and (max-width: 1023px) {
@@ -271,5 +275,13 @@
     }
     .price-container.active-price {
         display: block;
+    }
+}
+
+@media print {
+    .print-container {
+        display: block;
+        width: 100%;
+        height: 100%;
     }
 }

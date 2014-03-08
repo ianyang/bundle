@@ -1,9 +1,8 @@
 'use strict';
-console.log("loading bundle app");
 
 var Bundle = angular.module('bundle', ['ngRoute']);
-
-Bundle.config(function($locationProvider, $httpProvider, $routeProvider) {
+Bundle.config(['$locationProvider', '$httpProvider', '$routeProvider',
+    function($locationProvider, $httpProvider, $routeProvider) {
 
     // Enable CORS
     $httpProvider.defaults.useXDomain = true;
@@ -13,7 +12,7 @@ Bundle.config(function($locationProvider, $httpProvider, $routeProvider) {
     $locationProvider.html5Mode(true);
 
     // Transform $http.post body to same param format used by jquery $.post call
-    $httpProvider.defaults.transformRequest = function(data){
+    $httpProvider.defaults.transformRequest = function(data) {
         if (data === undefined) {
             return data;
         }
@@ -24,20 +23,24 @@ Bundle.config(function($locationProvider, $httpProvider, $routeProvider) {
 
     // Routes
     $routeProvider
-    .when('/', {
-        templateUrl: '../templates/home.html',
-        controller: 'HomeCtrl'
-    })
-    .when('/:id', {
-        templateUrl: '../templates/view.html',
-        controller: 'ViewCtrl'
-    })
-    .when('/:id/:token', {
-        templateUrl: '../templates/create.html',
-        controller: 'CreateCtrl'
-    })
-    .otherwise({
-        redirectTo: '/'
-    });
+        .when('/', {
+            templateUrl: '../templates/home.html',
+            controller: 'HomeCtrl'
+        })
+        .when('/:id', {
+            templateUrl: '../templates/view.html',
+            controller: 'ViewCtrl'
+        })
+        .when('/:id/:token', {
+            templateUrl: '../templates/create.html',
+            controller: 'CreateCtrl'
+        })
+        .otherwise({
+            redirectTo: '/'
+        });
 
-});
+    // Fastclick
+    $(function() {
+        FastClick.attach(document.body);
+    });
+}]);
