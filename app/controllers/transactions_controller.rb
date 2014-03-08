@@ -69,13 +69,14 @@ class TransactionsController < ApplicationController
       if params[:token]
         if @transaction.token != params[:token]
 	  @transaction = nil
-          render json: "{ error: true, message: \"Error 403, you don't have permissions for this operation.\" }", status: :forbidden
+          render json: "{ error: true, message: \"Error 403, you don't have permissions for this operation.\" }", 
+	    status: :forbidden
 	end
       end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def transaction_params
-      params.require(:transaction).permit(:price, :discount_rate, :email)
+      params.require(:transaction).permit(:price, :discount_rate, :email, :items)
     end
 end
