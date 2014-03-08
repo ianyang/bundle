@@ -13,7 +13,7 @@ Bundle.config(function($locationProvider, $httpProvider, $routeProvider) {
     $locationProvider.html5Mode(true);
 
     // Transform $http.post body to same param format used by jquery $.post call
-    $httpProvider.defaults.transformRequest = function(data){
+    $httpProvider.defaults.transformRequest = function(data) {
         if (data === undefined) {
             return data;
         }
@@ -24,20 +24,20 @@ Bundle.config(function($locationProvider, $httpProvider, $routeProvider) {
 
     // Routes
     $routeProvider
-    .when('/', {
-        templateUrl: '../templates/home.html',
-        controller: 'HomeCtrl'
-    })
-    .when('/:id', {
-        templateUrl: '../templates/view.html',
-        controller: 'ViewCtrl'
-    })
-    .when('/:id/:token', {
-        templateUrl: '../templates/create.html',
-        controller: 'CreateCtrl'
-    })
-    .otherwise({
-        redirectTo: '/'
-    });
+        .when('/', {
+            templateUrl: '../templates/home.html',
+            controller: 'HomeCtrl'
+        })
+        .when('/:id', {
+            templateUrl: '../templates/view.html',
+            controller: 'ViewCtrl'
+        })
+        .when('/:id/:token', {
+            templateUrl: '../templates/create.html',
+            controller: 'CreateCtrl'
+        })
+        .otherwise({
+            redirectTo: '/'
+        });
 
 });
