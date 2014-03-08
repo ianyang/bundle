@@ -87,7 +87,7 @@ Bundle.controller('CreateCtrl', ['$scope', '$http', '$location',
 
                         reader.readAsDataURL(file);
                         addEventHandler(reader, 'loadend', function(e, file) {
-                            console.log(file);
+                            $scope.addItem(file);
                         }.bindToEventHandler(file));
                     }
                     return false;

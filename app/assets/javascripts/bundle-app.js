@@ -39,4 +39,8 @@ Bundle.config(['$locationProvider', '$httpProvider', '$routeProvider',
             redirectTo: '/'
         });
 
+    // Fastclick
+    $(function() {
+        FastClick.attach(document.body);
+    });
 }]);

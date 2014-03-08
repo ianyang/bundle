@@ -17,5 +17,6 @@
 //= require angular-router
 
 //= require qrcode-min
+//= require fastclick
 
 //= require_tree .
