@@ -2,7 +2,8 @@
 console.log("loading bundle app");
 
 var Bundle = angular.module('bundle', ['ngRoute']);
-Bundle.config(function($locationProvider, $httpProvider, $routeProvider) {
+Bundle.config(['$locationProvider', '$httpProvider', '$routeProvider',
+    function($locationProvider, $httpProvider, $routeProvider) {
 
     // Enable CORS
     $httpProvider.defaults.useXDomain = true;
@@ -39,4 +40,4 @@ Bundle.config(function($locationProvider, $httpProvider, $routeProvider) {
             redirectTo: '/'
         });
 
-});
+}]);
