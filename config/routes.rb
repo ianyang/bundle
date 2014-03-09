@@ -5,12 +5,15 @@ Bundle::Application.routes.draw do
   get '/:id/:token' => 'public#index'
   get '/:id' => 'public#index'
 
-  match 'api/transactions/:id(/:token)' => 'transactions#update', :via => :put
+  scope :api, defaults: {format: :json} do
+    resources :transactions, only: [:create, :show] do
+      resources :items, only: [:show]
+    end
+  end
+
+  match 'api/transactions/:id/:token' => 'transactions#update', :via => [:patch, :put]
   match 'api/transactions/:id(/:token)' => 'transactions#show', :via => :get
 
-  scope :api, defaults: {format: :json} do
-    resources :transactions, only: [:show, :create, :update]
-  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -3,8 +3,8 @@ class Transaction < ActiveRecord::Base
   validates :price, numericality: { greater_than_or_equal_to: 0 }
   validates :discount_rate, :inclusion => 0..100
   validates :email, presence: true
-
   before_create :build_token
+  accepts_nested_attributes_for :items, allow_destroy: true
 
   private
   def build_token
