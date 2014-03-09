@@ -15,6 +15,8 @@
 
 //= require angular-min
 //= require angular-router
+//= require angular-file-upload-min
+//= require angular-file-upload-shim-min
 
 //= require qrcode-min
 //= require fastclick

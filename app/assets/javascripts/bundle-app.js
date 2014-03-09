@@ -1,6 +1,6 @@
 'use strict';
 
-var Bundle = angular.module('bundle', ['ngRoute']);
+var Bundle = angular.module('bundle', ['angularFileUpload', 'ngRoute']);
 Bundle.config(['$locationProvider', '$httpProvider', '$routeProvider',
     function($locationProvider, $httpProvider, $routeProvider) {
 

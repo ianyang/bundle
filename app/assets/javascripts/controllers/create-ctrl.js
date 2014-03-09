@@ -1,5 +1,5 @@
-Bundle.controller('CreateCtrl', ['$scope', '$http', '$location',
-    function($scope, $http, $location) {
+Bundle.controller('CreateCtrl', ['$scope', '$http', '$location', '$upload',
+    function($scope, $http, $location, $upload) {
 
         // declaring scope variables
         $scope.items = null;
@@ -23,27 +23,35 @@ Bundle.controller('CreateCtrl', ['$scope', '$http', '$location',
             });
         };
 
-        // adding item
-        $scope.addItem = function(files) {
-            var fd = new FormData(),
-                postObj = {transaction: files[0]};
-
-            fd.append("image", files[0]);
-
-            $http.put('/api/transactions'+path, postObj,
-                {
+        $scope.onFileSelect = function($files) {
+            //$files: an array of files selected, each file has name, size, and type.
+            for (var i = 0; i < $files.length; i++) {
+                var file = $files[i];
+                $scope.upload = $upload.upload({
+                    url: '/api/transactions'+path,
+                    method: 'PUT',
+                    headers: {'Content-Type': undefined},
                     withCredentials: true,
-                    headers: {
-                        'Content-Type': undefined
-                    },
-                    transformRequest: angular.identity
-            }).success(function(data) {
-                debugger
-            }).error(function(data) {
-                debugger
-                console.log('IMG upload failure');
-            })
-        };
+                    data: {transactions: $scope.item},
+                    file: file,
+                    // file: $files, //upload multiple files, this feature only works in HTML5 FromData browsers
+                    /* set file formData name for 'Content-Desposition' header. Default: 'file' */
+                    //fileFormDataName: myFile, //OR for HTML5 multiple upload only a list: ['name1', 'name2', ...]
+                    /* customize how data is added to formData. See #40#issuecomment-28612000 for example */
+                    //formDataAppender: function(formData, key, val){} //#40#issuecomment-28612000
+                }).progress(function(evt) {
+                    console.log('percent: ' + parseInt(100.0 * evt.loaded / evt.total));
+                }).success(function(data, status, headers, config) {
+                    // file is uploaded successfully
+                    console.log(data);
+                }).error(function() {
+                    console.log('error');
+                });
+                //.error(...)
+                //.then(success, error, progress); 
+            }
+            // $scope.upload = $upload.upload({...}) alternative way of uploading, sends the the file content directly with the same content-type of the file. Could be used to upload files to CouchDB, imgur, etc... for HTML5 FileReader browsers. 
+          };
 
         $scope.updateItems = function() {
             console.log("saving");
@@ -51,78 +59,9 @@ Bundle.controller('CreateCtrl', ['$scope', '$http', '$location',
             $scope.saving = false;
         };
 
-        fetchItems();
 
-        // photo uploader
-        $(".photo-uploader").on("change", function() {
-            $scope.addItem(this.files);
-        });
-
-        // qr code
+        // execution
         new QRCode(document.getElementById("qrcode"), $scope.fullPath);
-
-        // drag and drop
-        if(window.FileReader) { 
-            var drop; 
-
-            addEventHandler(window, 'load', function() {
-                drop   = document.getElementById('drop');
-                
-                function cancel(e) {
-                  if (e.preventDefault) { e.preventDefault(); }
-                  return false;
-                }
-              
-                // Tells the browser that we *can* drop on this target
-                addEventHandler(drop, 'dragover', cancel);
-                addEventHandler(drop, 'dragenter', cancel);
-
-                addEventHandler(drop, 'drop', function (e) {
-                    e = e || window.event; // get window.event if e argument missing (in IE)   
-                    if (e.preventDefault) { e.preventDefault(); } // stops the browser from redirecting off to the image.
-
-                    var dt    = e.dataTransfer;
-                    var files = dt.files;
-                    for (var i=0; i<files.length; i++) {
-                        var file = files[i];
-                        var reader = new FileReader();
-
-                        //attach event handlers here...
-
-                        reader.readAsDataURL(file);
-                        addEventHandler(reader, 'loadend', function(e, file) {
-                            $scope.addItem(file);
-                        }.bindToEventHandler(file));
-                    }
-                    return false;
-                });
-
-                Function.prototype.bindToEventHandler = function bindToEventHandler() {
-                    var handler = this;
-                    var boundParameters = Array.prototype.slice.call(arguments);
-                    //create closure
-                    return function(e) {
-                      e = e || window.event; // get window.event if e argument missing (in IE)   
-                      boundParameters.unshift(e);
-                      handler.apply(this, boundParameters);
-                    }
-                };
-            });
-        } else { 
-          console.log('Your browser does not support the HTML5 FileReader.');
-        }
-
-        function addEventHandler(obj, evt, handler) {
-            if(obj.addEventListener) {
-                // W3C method
-                obj.addEventListener(evt, handler, false);
-            } else if(obj.attachEvent) {
-                // IE method.
-                obj.attachEvent('on'+evt, handler);
-            } else {
-                // Old school method.
-                obj['on'+evt] = handler;
-            }
-        }
+        fetchItems();
 
 }]);
