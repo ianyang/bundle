@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  protect_from_forgery with: :null_session, :if => Proc.new { |c| c.request.format == 'application/json' }
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   # GET /items
@@ -66,6 +67,19 @@ class ItemsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_item
       @item = Item.find(params[:id])
+      if @item.nil?
+        return
+      end
+      token = params[:token]
+      if token.nil?
+        if action_name != :show
+          render json: "{ error: true, message: \"Error 403, you don't have permissions for this operation. (no token)\" }", 
+	    status: :forbidden
+	end
+      elsif token != @item.transaction.token
+        render json: "{ error: true, message: \"Error 403, you don't have permissions for this operation. (invalid token)\" }", 
+	  status: :forbidden
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
