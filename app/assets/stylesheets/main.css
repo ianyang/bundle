@@ -1,3 +1,5 @@
+/*Create and view page general*/
+
 .main-header {
     width: 100%;
     height: 80px;
@@ -26,6 +28,9 @@
     overflow: hidden;
     background: #ffffff;
 }
+
+/*Items*/
+
 
 .main-body h1 {
     color: #323a3d;
@@ -165,10 +170,13 @@
     font-size: 20px;
 }
 
+
+/*Footer*/
+
 .main-footer {
     width: 100%;
     height: 96px;
-    background: #55ac98;
+    background: #171d1f;
     left: 0;
     bottom: 0;
     position: absolute;
@@ -196,53 +204,51 @@
 }
 
 .price-container.bundle-price {
-    background: #ffffff;
-    border-top: 4px solid #e0e4e6;
+    background: #f96b5c;
     padding: 24px 32px;
 }
 
-.bundle-price .title {
-    color: #8f989b;
+.action-container {
+    float: right;
+    width: 40%;
 }
 
-.bundle-price .price {
-    color: #323a3d;
+.share-title {
+    height: 96px;
+    float: left;
+    margin-right: 10px;
+    line-height: 96px;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.share-bar,
+button.print-flyer-btn {
+    float: left;
+    height: 42px;
+    margin-top: 26px;
+    margin-left: 18px;
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+    border: none;
+    line-height: 42px;
+    overflow: hidden;
+    padding: 0 18px;
+    font-size: 13px;
 }
 
 .share-bar {
-    float: right;
-    width: 40%;
-    height: 52px;
-    margin-top: 24px;
+    font-weight: 600;
     background: #ffffff;
-    border: 2px solid #ffffff;
-    -webkit-border-radius: 30px;
-       -moz-border-radius: 30px;
-            border-radius: 30px;
-    overflow: hidden;
+    color: #9e9e9e;
 }
 
-.share-bar .uuid-container {
-    width: 90%;
-    height: 48px;
-    float: left;
-    margin-left: 10%;
-    overflow-y: hidden;
-    overflow-x: scroll;
-    color: #8f989b;
-    line-height: 52px;
-}
-
-/*.share-bar button {
-    width: 35%;
-    height: 48px;
-    float: left;
+button.print-flyer-btn {
+    background: #3aa9a5;
     color: #ffffff;
-    border: none;
-    background: #55ac98;
-    margin: 0;
-    padding: 0;
-}*/
+}
 
 .saving {
     padding: 8px;
