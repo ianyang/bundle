@@ -13,6 +13,8 @@ Bundle::Application.routes.draw do
 
   match 'api/transactions/:id/:token' => 'transactions#update', :via => [:patch, :put]
   match 'api/transactions/:id(/:token)' => 'transactions#show', :via => :get
+  match 'api/items/:id/:token' => 'items#update', :via => [:patch, :put]
+  match 'api/items/:id/:token' => 'items#destroy', :via => :delete
 
 
   # The priority is based upon order of creation: first created -> highest priority.
