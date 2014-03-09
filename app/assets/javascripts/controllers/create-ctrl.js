@@ -4,16 +4,18 @@ Bundle.controller('CreateCtrl', ['$scope', '$http', '$location',
         // declaring scope variables
         $scope.items = null;
         $scope.appReady = false;
-        $scope.id = $location.path().split('/')[1]
-        $scope.token = $location.path().split('/')[2];
         $scope.fullPath = $location.$$host + '/' + $scope.id;
         $scope.saving = false;
         $scope.bundleActivated = false;
         $scope.totalPrice = 500;
         $scope.bundlePrice = 1000;
 
+        // declaring local variables
+        var path = $location.$$path;
+
+        // function to verify that url is valid
         var fetchItems = function() {
-            $http.get('/api/transactions/'+$scope.id+'/'+$scope.token).success(function(data){
+            $http.get('/api/transactions'+path).success(function(data){
                 $scope.appReady = true;
                 $scope.items = data.items;
             }).error(function(data){
@@ -21,23 +23,25 @@ Bundle.controller('CreateCtrl', ['$scope', '$http', '$location',
             });
         };
 
+        // adding item
         $scope.addItem = function(files) {
-            //Create some new form data to submit
-            var fd = new FormData();
+            var fd = new FormData(),
+                postObj = {transaction: files[0]};
 
-            //Grab the first selected file
             fd.append("image", files[0]);
 
-            $http.post('/transactions/'+$scope.id+'/'+$scope.token, fd, {
-                withCredentials: true,
-                headers: {
-                    'Content-Type': undefined
-                },
-                transformRequest: angular.identity
+            $http.put('/api/transactions'+path, postObj,
+                {
+                    withCredentials: true,
+                    headers: {
+                        'Content-Type': undefined
+                    },
+                    transformRequest: angular.identity
             }).success(function(data) {
                 debugger
             }).error(function(data) {
-                console.log('IMG upload failure: ', data);
+                debugger
+                console.log('IMG upload failure');
             })
         };
 

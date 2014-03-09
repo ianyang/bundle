@@ -1,17 +1,18 @@
 /*Create and view page general*/
 
 .main-header {
-    width: 100%;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     background: #171d1f url("icon-logo@2x.png") no-repeat center center;
     background-size: 40px;
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 20px;
+    top: 20px;
+    z-index: 100;
 }
 
 .main-container {
-    padding: 80px 0 96px 0;
+    padding: 0 0 96px 0;
     width: 100%;
     height: 100%;
     overflow: scroll;
@@ -37,7 +38,7 @@
     margin: 60px auto;
     text-align: center;
     max-width: 640px;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 22px;
     line-height: 32px;
     padding: 0 16px;
@@ -63,7 +64,7 @@
 }
 
 .photo-wrapper.add {
-    border: 4px dashed #bcc3c6;
+    border: 2px dashed #bcc3c6;
     background: url("icon-add-photo@2x.png") no-repeat center center;
     background-size: 60px;
     opacity: 0.5;
@@ -210,7 +211,6 @@
 
 .action-container {
     float: right;
-    width: 40%;
 }
 
 .share-title {
@@ -251,14 +251,11 @@ button.print-flyer-btn {
 }
 
 .saving {
-    padding: 8px;
+    width: 60px;
+    text-align: center;
     position: absolute;
-    top: 20px;
-    right: 20px;
-    background: rgba(0,0,0,0.1);
-    -webkit-border-radius: 10px;
-       -moz-border-radius: 10px;
-            border-radius: 10px;
+    top: 88px;
+    left: 20px;
     color: #8f989b;
 }
 
@@ -281,6 +278,10 @@ button.print-flyer-btn {
     }
     .price-container.active-price {
         display: block;
+    }
+    .share-title,
+    button.print-flyer-btn {
+        display: none;
     }
 }
 
